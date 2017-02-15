@@ -30,8 +30,8 @@ class TextViewController: UIViewController {
         //        print(oftenDictionary.flatMap({$0}).sorted { $0.0.1 > $0.1.1 })
         //        print(oftenDictionary.sorted(by: { (a, b) in (a.value ) > (b.value ) }))
         print(oftenDictionary.sorted(by: { $0.0.value > $0.1.value}))
-        let m = sortByOften(dict: oftenDictionary)
-        labelText.text = String(m.count) + "\n" + String(describing: m)
+        let oftenWords = sortByOften(dict: oftenDictionary)
+        labelText.text = String(oftenWords.count) + "\n" + String(describing: oftenWords)
     }
     
     private func sortByOften(dict: [String: Int]) -> [(String, Int)]{
